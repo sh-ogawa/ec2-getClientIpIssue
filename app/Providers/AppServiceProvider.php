@@ -42,7 +42,7 @@ class AppServiceProvider extends ServiceProvider
 
         {
             // I found EC2 parameter in Symfony\Component\HttpFoundation
-            $request->setTrustedProxies($request->ips(), Request::HEADER_X_FORWARDED_FOR);
+            $request->setTrustedProxies($request->ips(), Request::HEADER_X_FORWARDED_AWS_ELB);
 
             // get origin ips, I found origin ip address in HTTP_X_FORWARDED_FOR
             $ips = $request->ips();
